@@ -1,0 +1,26 @@
+code_version: v7.0
+group_name: ''
+
+llm:
+  path: openai/gpt-4o-mini
+  backend: OpenRouter
+  render: false
+  temperature: 0.0
+  top_p: 1.0
+  iter: 0
+
+mix_llm: [] # disable
+seed: 42
+debug: false
+
+defaults:
+- _self_
+- experiment: basic
+
+hydra:
+  run:
+    dir: ./outputs/${uuid:}
+  searchpath:
+    - ./simulation/scenarios/fishing/conf
+    - ./simulation/scenarios/sheep/conf
+    - ./simulation/scenarios/pollution/conf
